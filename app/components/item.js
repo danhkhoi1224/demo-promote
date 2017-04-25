@@ -40,17 +40,18 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
   imagebox:{
-      flex:0.5,
-      justifyContent:'center',
-      alignItems:'stretch'
+      flex:1,
+      justifyContent: 
+      alignItems:'strecth'
       
   },
   image:{
       flex:1,
       height:100,
-      width:500,
-      justifyContent: "space-around",
-      resizeMode:'cover'
+      //width:null,
+      //alignSelf: 'stretch',
+      //justifyContent: "space-around",
+      //resizeMode:'cover'
   },
   lastRow:{
     flex:1,

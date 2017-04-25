@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Text, TouchableOpacity,Image, Button} from 'react-native';
-import RemainTime from './remaintime'
+import {StyleSheet, View, Text,Image, Button} from 'react-native';
 
 
 export default class Detail extends Component {
@@ -8,9 +7,8 @@ export default class Detail extends Component {
     super(props);
   }
   render(){
-    const {text, img, time} = this.props.data;
     return(
-        <View style = {styles.container}>
+        <View >
             <Text>'chi tiet nay no' </Text>
         </View>
     );

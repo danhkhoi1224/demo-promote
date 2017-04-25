@@ -6,39 +6,34 @@ const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 export default class List extends Component {
   constructor(props) {
     super(props);
-    this.renderRow = this.renderRow.bind(this)
+    this.renderRow = this.renderRow.bind(this);
+    this.onItemPress = this.onItemPress.bind(this);
   }
 
-   renderRow(rowData, sectionId, rowId) {
-       
-        const { data, add, remove } = this.props; 
-          console.log('rawData', rowData);
-            return(
-             /*<TouchableOpacity style={styles.row} onPress={()=>remove(rowData.text)}>
-                 <View style={styles.rowText2}>
-                      <Text style={styles.rowText2main}>{rowData.text}</Text>  
-                       <Text style={styles.rowText2sub}>{rowData.subtext}</Text>  
-                </View>
-             </TouchableOpacity>*/
-           
-             <Item data = {rowData}></Item>
-             
-             );
+
+  onItemPress(){
+      this.props.navigator.push({
+        id: 'DetailScreen'
+      })
+  }
+
+  renderRow(rowData, sectionId, rowId) {
+    const { data, add, remove } = this.props; 
+    return(
+        <TouchableOpacity onPress = {this.onItemPress}>
+          <Item data = {rowData}></Item>
+        </TouchableOpacity>
+      );
       
-    }
+  }
   render() {
     const { data, add, remove } = this.props;
     return(
       <View style={styles.container}> 
-         
           <ListView dataSource={ds.cloneWithRows(data.listData)}
-                          renderRow={this.renderRow}
+                        renderRow={this.renderRow}
                         styles = {styles.listView}>          
           </ListView>
-         <TouchableOpacity title='Add new item'  onPress= {()=>add('NEW ITEM')} style= {styles.button} >
-              <Text style={styles.buttonText}>ADD NEW ITEM</Text>
-          </TouchableOpacity>
-          
         </View>
         
     );
