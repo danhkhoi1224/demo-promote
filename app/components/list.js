@@ -1,5 +1,5 @@
-import  {Component} from 'react';
-import {StyleSheet, ListView} from 'react-native';
+import React,  {Component} from 'react';
+import {StyleSheet, ListView, View, TouchableOpacity} from 'react-native';
 import Item from './item';
 
 const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
@@ -28,7 +28,7 @@ export default class List extends Component {
 	render() {
 		const { data } = this.props;
 		return(
-      <View style={styles.container}> 
+      	<View style={styles.container}> 
           <ListView dataSource={ds.cloneWithRows(data.listData)}
                         renderRow={this.renderRow}
                         styles = {styles.listView}>          

@@ -1,5 +1,5 @@
-import  {Component} from 'react';
-import {StyleSheet} from 'react-native';
+import React,  {Component} from 'react';
+import {StyleSheet, View, Image, Text} from 'react-native';
 import RemainTime from './remainTime';
 
 

@@ -1,5 +1,5 @@
-import  {Component} from 'react';
-
+import React,  {Component} from 'react';
+import {View, Text} from 'react-native';
 
 export default class Detail extends Component {
 	constructor(props) {
