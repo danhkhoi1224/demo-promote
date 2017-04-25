@@ -15,22 +15,21 @@ export default class RemainTime extends Component {
     return(
       <View style = {styles.container}>
           <Text style = {styles.text}>{returnText}</Text>
-        </View>
+      </View>
     );
   }
   generateText(){
     const currentDate = new Date();
     let endDate = new Date(this.props.time*1000);
-    console.log('endDate', endDate*1000);
-    let timeDiff = Math.abs(endDate.getTime() - currentDate.getTime());
-    let diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-    let diffHours = Math.ceil((timeDiff % (1000 * 3600 *24))/(1000*3600) );
-    let diffMins = Math.ceil((timeDiff % (1000* 3600 *24)) %(1000*3600)/(1000*60));
-    let returnText = 'Còn ' + diffDays + ' ngày ' + diffHours + ' giờ ' + diffMins + ' phút';
-    
+    console.log('date',{currentDate, endDate});
+    let timeDiff = new Date(Math.abs(endDate.getTime() - currentDate.getTime()));
+    let diffDays = timeDiff.getDate();
+    let diffHours = timeDiff.getHours();
+    let diffMins = timeDiff.getMinutes();
+    let diffSecs = timeDiff.getSeconds(); 
+    let returnText = 'Còn ' + diffDays + ' ngày ' + diffHours + ' giờ ' + diffMins + ' phút ' + diffSecs + ' giây';
     return returnText;
   }
-   
 }
 
 const styles = StyleSheet.create({

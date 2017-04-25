@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Text, TouchableOpacity,Image, Button} from 'react-native';
-import RemainTime from './remaintime'
+import RemainTime from './remainTime'
 
 
 export default class Item extends Component {
@@ -41,17 +41,13 @@ const styles = StyleSheet.create({
   },
   imagebox:{
       flex:1,
-      justifyContent: 
-      alignItems:'strecth'
-      
   },
   image:{
-      flex:1,
+      
       height:100,
-      //width:null,
-      //alignSelf: 'stretch',
-      //justifyContent: "space-around",
-      //resizeMode:'cover'
+      width: 500,
+      flex: 1,
+      resizeMode: 'cover'
   },
   lastRow:{
     flex:1,
